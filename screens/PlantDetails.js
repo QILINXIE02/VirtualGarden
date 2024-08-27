@@ -1,24 +1,14 @@
-// src/screens/PlantDetails.js
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
 const PlantDetails = ({ route }) => {
-  const { plant } = route.params || {}; // Destructure the plant from route params
-
-  if (!plant) {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.errorText}>Plant data not available</Text>
-      </View>
-    );
-  }
+  const { plant } = route.params;
 
   return (
     <View style={styles.container}>
-      <Text style={styles.plantName}>{plant.name}</Text>
-      <Text style={styles.plantDetails}>Type: {plant.type}</Text>
-      <Text style={styles.plantDetails}>Growth Rate: {plant.growthRate}</Text>
-      {/* Add more plant details here */}
+      <Text style={styles.title}>{plant.name}</Text>
+      <Text style={styles.description}>{plant.description}</Text>
+      <Text style={styles.healthStatus}>Health: {plant.healthStatus}</Text>
     </View>
   );
 };
@@ -26,21 +16,23 @@ const PlantDetails = ({ route }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 16,
     justifyContent: 'center',
     alignItems: 'center',
+    padding: 20,
   },
-  plantName: {
+  title: {
     fontSize: 24,
     fontWeight: 'bold',
+    marginBottom: 10,
   },
-  plantDetails: {
-    fontSize: 18,
-    marginTop: 8,
+  description: {
+    fontSize: 16,
+    marginBottom: 20,
+    textAlign: 'center',
   },
-  errorText: {
+  healthStatus: {
     fontSize: 18,
-    color: 'red',
+    color: '#4CAF50',
   },
 });
 

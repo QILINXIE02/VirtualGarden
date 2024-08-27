@@ -1,24 +1,29 @@
-// src/screens/HomeScreen.js
 import React from 'react';
 import { View, Text, Button, StyleSheet } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
 
-const HomeScreen = () => {
-  const navigation = useNavigation();
-
-  const plant = {
-    name: 'Rose',
-    type: 'Flower',
-    growthRate: 'Fast',
-    // Add more plant properties here
-  };
-
+const HomeScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Welcome to Your Virtual Garden</Text>
+      <Text style={styles.title}>Welcome to Virtual Garden</Text>
       <Button
-        title="View Plant Details"
-        onPress={() => navigation.navigate('PlantDetails', { plant })}
+        title="View Garden"
+        onPress={() => navigation.navigate('GardenView')}
+      />
+      <Button
+        title="Plant Details"
+        onPress={() => navigation.navigate('PlantDetails')}
+      />
+      <Button
+        title="Settings"
+        onPress={() => navigation.navigate('Settings')}
+      />
+      <Button
+        title="Subscribe"
+        onPress={() => navigation.navigate('Subscription')}
+      />
+      <Button
+        title="Community Garden"
+        onPress={() => navigation.navigate('Community')}
       />
     </View>
   );
@@ -27,14 +32,14 @@ const HomeScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 16,
     justifyContent: 'center',
     alignItems: 'center',
+    padding: 20,
   },
   title: {
     fontSize: 24,
     fontWeight: 'bold',
-    marginBottom: 16,
+    marginBottom: 20,
   },
 });
 
