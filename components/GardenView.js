@@ -15,6 +15,7 @@ const GardenView = () => {
   return (
     <View style={styles.container}>
       <Animated.View style={[styles.gardenContainer, { opacity: fadeAnim }]}>
+        {/* Add garden visualization here */}
       </Animated.View>
     </View>
   );
