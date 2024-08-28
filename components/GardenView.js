@@ -1,6 +1,5 @@
 import React, { useEffect, useRef } from 'react';
 import { View, Animated, StyleSheet } from 'react-native';
-import ARGarden from './ARGarden';
 
 const GardenView = () => {
   const fadeAnim = useRef(new Animated.Value(0)).current;
@@ -16,7 +15,6 @@ const GardenView = () => {
   return (
     <View style={styles.container}>
       <Animated.View style={[styles.gardenContainer, { opacity: fadeAnim }]}>
-        <ARGarden />
       </Animated.View>
     </View>
   );

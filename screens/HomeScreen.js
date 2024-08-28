@@ -1,14 +1,15 @@
 import React from 'react';
 import { View, Text, Button, StyleSheet } from 'react-native';
+import GardenView from '../components/GardenView';  // Importing GardenView component
 
 const HomeScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Welcome to Virtual Garden</Text>
-      <Button
-        title="View Garden"
-        onPress={() => navigation.navigate('GardenView')}
-      />
+      
+      {/* Display GardenView directly on the HomeScreen */}
+      <GardenView />
+
       <Button
         title="Plant Details"
         onPress={() => navigation.navigate('PlantDetails')}
